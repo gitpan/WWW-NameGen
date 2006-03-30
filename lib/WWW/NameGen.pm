@@ -1,3 +1,5 @@
+# Revision $Revision$ ( $Date$ ) - $Source$
+
 package WWW::NameGen;
 
 use warnings;
@@ -5,7 +7,7 @@ use strict;
 
 use LWP::UserAgent;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $max = 2_500;
 my $chunk_size = 250;
@@ -61,7 +63,7 @@ sub generate {
 		}
 
 		my $html = $response->content;
-		while ($html =~ m!target="_blank"> ([^<]*)</a><br>!gi ) {
+		while ($html =~ m!target="_blank">([^<]*)</a><br>!gixm ) {
 			push @names, $1;
 		}
 		$count += $tcount;
@@ -71,6 +73,11 @@ sub generate {
 
 	return @names;
 }
+
+1;
+__END__
+
+=pod
 
 =head1 NAME
 
@@ -212,5 +219,3 @@ This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-
-1;
