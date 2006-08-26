@@ -7,7 +7,7 @@ use strict;
 
 use LWP::UserAgent;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 my $max = 2_500;
 my $chunk_size = 250;

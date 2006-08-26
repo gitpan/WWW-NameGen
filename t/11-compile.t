@@ -25,7 +25,8 @@ my ($namegen, @chunks);
 	is(scalar @names, 20, '@names count good - 20');
 }
 
-{
+SKIP: {
+	skip 'No need to test this', 1;
 	my @names = $namegen->generate( min => 7000, nocache => 1);
 	is(scalar @names, 2500, '@names max - 7000');
 }
@@ -38,7 +39,8 @@ my ($namegen, @chunks);
 	is($names[0], $othernames[0], 'more caching tests - good')
 }
 
-{
+SKIP: {
+	skip 'No need to test this', 4;
 	@chunks = $namegen->get_chunks(300);
 	$count = 0; map { $count += $_ } @chunks;
 	is($count, 300, 'get_chunk count 300 - good');

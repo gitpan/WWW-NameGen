@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: WWW-NameGen
-version: 0.02
+version: 0.03
 author:
   - Nick Gerakines <nick@socklabs.com>
 abstract: A website polling random name generator
